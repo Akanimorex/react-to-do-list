@@ -1,0 +1,18 @@
+.textField{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.textField input[type="text"]{
+    padding: 20px;
+    border: outset 1px;
+    background-color: lavender;
+
+}
+
+
+.textField input[type="text"]::placeholder{
+    font-size: 17px;
+}
