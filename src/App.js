@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import InputField from './InputField';
+import Activities from './Activities';
 import './App.css';
 
 class App extends Component{
@@ -12,6 +13,7 @@ class App extends Component{
 
         <h1>To do list</h1>
         <InputField/>
+        <Activities/>
 
       </div>
     )
