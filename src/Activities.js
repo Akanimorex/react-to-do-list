@@ -9,7 +9,7 @@ const Activities=(props)=>{
 
         <div className="list">
             <div>
-                <h3>{props.lists}</h3>
+                <h3>{props.list}</h3>
             </div>
 
 
