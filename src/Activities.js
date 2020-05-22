@@ -3,21 +3,18 @@ import './Activities.css'
 import { Icon } from 'semantic-ui-react';
 
 
-const Activities=()=>{
+const Activities=(props)=>{
     return(
 
 
         <div className="list">
             <div>
-            <h3>Cook Rice</h3>
-
+                <h3>{props.lists}</h3>
             </div>
 
 
             <div>
-
-             <Icon name="pencil" />
-
+                 <Icon name="pencil"/>
             </div>
            
            

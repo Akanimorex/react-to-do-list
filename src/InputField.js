@@ -1,12 +1,14 @@
 import React from 'react';
 import './InputField.css'
 
-const InputField =()=>{
+const InputField = (props) => {
     return(
         <div className="textField">
+           
 
-            <input type="text" placeholder="activities" />
+                <input type="text" onKeyPress={props.add} placeholder="activities" />
 
+                
         </div>
     )
 }
