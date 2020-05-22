@@ -12,6 +12,9 @@ class App extends Component {
 
   }
 
+
+
+
   onSubmitAdd = (event) => {
     if (event.charCode === 13){
       console.log(event.target.value);
@@ -19,12 +22,28 @@ class App extends Component {
     } 
   };
 
+
+
   render() {
+    const lists = [
+      {
+        id: 0,
+        todo: 'see a movie'
+      }, 
+      {
+        id: 1,
+        todo: 'go to church'
+      }, 
+    ];
+    let output = lists.map(item => {
+      return (<Activities key={item.id} list={item.todo} />)
+    })
+    console.log(output)
     return (
       <div>
         <h1>To do list</h1>
         <InputField add={ this.onSubmitAdd } />
-        <Activities lists ={this.state.task} />
+        {output}
       </div>
     );
   }
