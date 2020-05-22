@@ -16,7 +16,7 @@ const Activities=()=>{
 
             <div>
 
-             <Icon name="pencil"/>
+             <Icon name="pencil" />
 
             </div>
            
