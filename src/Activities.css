@@ -1,14 +1,18 @@
 .list{
     background-color: lightcoral;
-    width: 90%;
-    margin: 0 auto;
+    width: 70%;
+    margin: 10px auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items:stretch;
+    padding:20px;
    
 }
 
 .list h3{
     font-size:30px;
+}
+Icon{
+    font-size: 100px;
 }
