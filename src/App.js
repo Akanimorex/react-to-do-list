@@ -18,7 +18,8 @@ class App extends Component {
   onSubmitAdd = (event) => {
     if (event.charCode === 13){
       console.log(event.target.value);
-      this.setState({task:event.target.value})  
+      const lists = [];
+
     } 
   };
 
@@ -47,6 +48,7 @@ class App extends Component {
       </div>
     );
   }
-}
+};
+
 
 export default App;
