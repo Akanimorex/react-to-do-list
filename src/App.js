@@ -7,36 +7,43 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      task:[],
+      todo:[],
+      adding:""
     };
 
   }
 
 
+componentDidMount(){
+  const lists =[];
+   
 
 
-  onSubmitAdd = (event) => {
-    if (event.charCode === 13){
-      console.log(event.target.value);
-      const lists = [];
+}
 
-    } 
-  };
+onSubmitAdd = (event) => {
+  if (event.charCode === 13){
+    console.log(event.target.value);
+    this.setState({todo:event.target.value})
+  } 
+};
+
+
 
 
 
   render() {
-    const lists = [
-      {
-        id: 0,
-        todo: 'see a movie'
-      }, 
-      {
-        id: 1,
-        todo: 'go to church'
-      }, 
-    ];
-    let output = lists.map(item => {
+    // const lists = [
+    //   {
+    //     id: 0,
+    //     todo: 'see a movie'
+    //   }, 
+    //   {
+    //     id: 1,
+    //     todo: 'go to church'
+    //   }, 
+    // ];
+    let output = this.state.todo.map(item => {
       return (<Activities key={item.id} list={item.todo} />)
     })
     console.log(output)
