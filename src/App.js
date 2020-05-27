@@ -23,18 +23,16 @@ onChangeAdd = (event) =>{
   onSubmitAdd = (event) => {
     console.log('click')
     
-      // this.setState({text:event.target.value});
 
-      const newItem = {
-        id:0,
+      const newItem = [{
+        id:Date.now(),
         text:this.state.text,
         done:false
-      }; 
+      }]; 
       
-      this.setState((prevState)=>( [{
-        todo:prevState.todo.concat(newItem),
-       
-      }]))
+      this.setState({
+        todo:newItem
+      })
        
     
   };
@@ -42,6 +40,8 @@ onChangeAdd = (event) =>{
 
 
   render() { 
+
+    
   
    return(
 
@@ -50,7 +50,7 @@ onChangeAdd = (event) =>{
         <InputField change={ this.onChangeAdd } /> <button onClick={ this.onSubmitAdd }>Add</button>
         <Activities  todo={this.state.todo} />
         
-    </div>
+      </div>
 
    )
     
