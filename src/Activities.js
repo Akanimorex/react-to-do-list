@@ -1,31 +1,28 @@
 import React from 'react';
-import './Activities.css'
-import { Icon } from 'semantic-ui-react';
+import './Activities.css';
+import ListItem from './ListItem';
+
 
 
 const Activities=(props)=>{
 
 
-    const  lists = props.todo.map((list)=>{
-        return (
-
-            
-            <div className="list" key={list.id} >
-                <div>
-                    <h3>{list.text}</h3>
-                </div>
-                <div>
-                    <Icon name="pencil"/>
-                </div>        
-            </div>
-
-        )
-    })
     return(
-
-        <div>{lists}</div>
+       <ul>
+            {
+            props.todo.map(item=>(
+                <ListItem key={item.id} text={item.text} />
+            ))
+        }
+       </ul>
     )
+
+
+
 }
 
 
 export default Activities;
+
+
+
