@@ -6,7 +6,7 @@ const InputField = (props) => {
         <div className="textField">
            
 
-                <input type="text" onKeyPress={props.add} placeholder="activities" />
+                <input type="text" onChange={props.change} placeholder="activities"/>
 
                 
         </div>
