@@ -9,10 +9,18 @@
     padding: 20px;
     border: outset 1px;
     background-color: lavender;
+    font-size: 1.5em;
 
 }
 
 
 .textField input[type="text"]::placeholder{
     font-size: 17px;
+}
+
+button {
+    background:#F08080;
+    padding:20px;
+    border: 1px solid;
+    font-size: 1.5em;
 }
