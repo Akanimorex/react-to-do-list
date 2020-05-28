@@ -17,7 +17,7 @@ class App extends Component {
  
 
   onSubmitAdd = (event) => {
-    event.preventDefault();
+  
     
     
 
@@ -34,6 +34,8 @@ class App extends Component {
     this.setState({
       todo: newItem,
     });
+    this.itemsRef.current.value = "";
+    event.preventDefault();
   };
 
   render() {
