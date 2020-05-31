@@ -6,26 +6,30 @@ import "./App.css";
 class App extends Component {
   constructor(props) {
     super(props);
+    this.itemsRef = React.createRef();
+
     this.state = {
       todo: [],
-      text: "",
+    
     };
   }
 
-  onChangeAdd = (event) => {
-    this.setState({
-      text: event.target.value,
-    });
-  };
+ 
 
   onSubmitAdd = (event) => {
-    const newItem = [
-      {
-        id: Date.now(),
-        text: this.state.text,
-        done: false,
-      },
-    ];
+    event.preventDefault();
+    
+    
+
+
+    let newItem = this.state.todo;
+
+    newItem.push({
+
+      id: Date.now(),
+      text: this.itemsRef.current.value
+
+    })
 
     this.setState({
       todo: newItem,
@@ -36,8 +40,7 @@ class App extends Component {
     return (
       <div>
         <h1>To do list</h1>
-        <InputField change={this.onChangeAdd} />{" "}
-        <button onClick={this.onSubmitAdd}>Add</button>
+        <InputField theRef={this.itemsRef} submit={this.onSubmitAdd}  />
         <Activities todo={this.state.todo} />
       </div>
     ); 
