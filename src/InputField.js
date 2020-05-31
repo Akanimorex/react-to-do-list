@@ -4,9 +4,14 @@ import './InputField.css'
 const InputField = (props) => {
     return(
         <div className="textField">
-           
+            <form onSubmit={props.submit}>
 
-                <input type="text" onChange={props.change} placeholder="activities"/>
+                <input ref={props.theRef} type="text"  placeholder="activities"/>
+                <button type="submit" >Add</button>
+
+            </form>
+
+                
 
                 
         </div>
