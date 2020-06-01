@@ -10,31 +10,26 @@ class App extends Component {
 
     this.state = {
       todo: [],
-    
     };
   }
 
- 
-
   onSubmitAdd = (event) => {
+    if(this.itemsRef.current.value !== ""){
+
+      let newItem = this.state.todo;
+
+      newItem.push({
+        id: Date.now(),
+        text: this.itemsRef.current.value,
+      });
   
-    
-    
+      this.setState({
+        todo: newItem,
+      });
+      this.itemsRef.current.value = "";
 
+    }
 
-    let newItem = this.state.todo;
-
-    newItem.push({
-
-      id: Date.now(),
-      text: this.itemsRef.current.value
-
-    })
-
-    this.setState({
-      todo: newItem,
-    });
-    this.itemsRef.current.value = "";
     event.preventDefault();
   };
 
@@ -42,10 +37,10 @@ class App extends Component {
     return (
       <div>
         <h1>To do list</h1>
-        <InputField theRef={this.itemsRef} submit={this.onSubmitAdd}  />
+        <InputField theRef={this.itemsRef} submit={this.onSubmitAdd} />
         <Activities todo={this.state.todo} />
       </div>
-    ); 
+    );
   }
 }
 
