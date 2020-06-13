@@ -13,6 +13,11 @@ class App extends Component {
     };
   }
 
+  handleDelete =()=>{
+
+    console.log('delete')
+
+  }
   onSubmitAdd = (event) => {
     if(this.itemsRef.current.value !== ""){
 
@@ -38,7 +43,7 @@ class App extends Component {
       <div>
         <h1>To do list</h1>
         <InputField theRef={this.itemsRef} submit={this.onSubmitAdd} />
-        <Activities todo={this.state.todo} />
+        <Activities todo={this.state.todo} del={this.handleDelete} />
       </div>
     );
   }
