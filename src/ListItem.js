@@ -9,7 +9,7 @@ const ListItem = (props) => {
   }
   return (
     <div className="list">
-      <div>
+      <div contentEditable={true}>
         <h3>{props.text}</h3>
       </div>
       <div>
