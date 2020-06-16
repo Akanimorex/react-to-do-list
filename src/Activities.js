@@ -8,10 +8,10 @@ const Activities=(props)=>{
 
 
     return(
-       <ul>
+       <ul contentEditable={false}>
             {
             props.todo.map(item => (
-                <ListItem key={item.id} text={item.text}  del={props.del}/>
+                <ListItem contentEditable={false} key={item.id} text={item.text}  del={props.del}/>
             ))
         }
        </ul>
