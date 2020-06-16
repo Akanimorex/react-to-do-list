@@ -43,7 +43,7 @@ class App extends Component {
       <div>
         <h1>To do list</h1>
         <InputField theRef={this.itemsRef} submit={this.onSubmitAdd} />
-        <Activities todo={this.state.todo} del={this.handleDelete} />
+        <Activities contentEditable={false} todo={this.state.todo} del={this.handleDelete} />
       </div>
     );
   }
