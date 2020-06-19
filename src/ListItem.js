@@ -9,12 +9,12 @@ const ListItem = (props) => {
   }
   return (
     <div className="list">
-      <div contentEditable={true}>
+      <div>
         <h3>{props.text}</h3>
       </div>
       <div>
         <Icon style={iconStyle} name="pencil" />
-        <Icon style={iconStyle} onClick={props.del} name="trash"/>
+        <Icon style={iconStyle} onClick={()=>{props.del(props.id)}} name="trash"/>
 
       </div>
     </div>
