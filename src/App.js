@@ -13,26 +13,31 @@ class App extends Component {
     };
   }
 
-  handleDelete =()=>{
-
-    console.log('delete')
-
-  }
+  handleDelete = (itemID) => {
+    // run a loop here 
+    let stuff = this.state.todo;
+    for(let i = 0;i<stuff.length; i++){
+        
+        if(stuff[i].id === itemID) {
+        stuff.splice(i, 1);
+        break;
+      }
+    }
+    this.setState({todo:stuff}) 
+  };
   onSubmitAdd = (event) => {
-    if(this.itemsRef.current.value !== ""){
-
+    if (this.itemsRef.current.value !== "") {
       let newItem = this.state.todo;
 
       newItem.push({
         id: Date.now(),
         text: this.itemsRef.current.value,
       });
-  
+
       this.setState({
         todo: newItem,
       });
       this.itemsRef.current.value = "";
-
     }
 
     event.preventDefault();
@@ -43,7 +48,10 @@ class App extends Component {
       <div>
         <h1>To do list</h1>
         <InputField theRef={this.itemsRef} submit={this.onSubmitAdd} />
-        <Activities contentEditable={false} todo={this.state.todo} del={this.handleDelete} />
+        <Activities
+          todo={this.state.todo}
+          del={this.handleDelete}
+        />
       </div>
     );
   }
