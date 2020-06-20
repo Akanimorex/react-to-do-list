@@ -7,13 +7,14 @@ const ListItem = (props) => {
     fontSize:'30px',
     padding:'10px'
   }
+  console.log(props.id)
   return (
     <div className="list">
       <div>
         <h3>{props.text}</h3>
       </div>
       <div>
-        <Icon style={iconStyle} name="pencil" />
+        {/* <Icon style={iconStyle} name="pencil" /> */}
         <Icon style={iconStyle} onClick={()=>{props.del(props.id)}} name="trash"/>
 
       </div>
